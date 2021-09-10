@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/claudiojsaillant/LoginRegister/issues"
   },
-  "homepage": "https://github.com/claudiojsaillant/LoginRegister#readme"
+  "homepage": "https://github.com/claudiojsaillant/LoginRegister#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
