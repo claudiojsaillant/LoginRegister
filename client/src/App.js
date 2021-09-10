@@ -1,13 +1,30 @@
 
 // import './App.css';
 import React, { Component } from "react";
-import Test from "./components/test/index"
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  // Link,
+  // Redirect,
+} from "react-router-dom";
+import SignUp from "./Views/SignUp";
+
 class App extends Component {
-  render () {
-      return (
-        <Test/>
-      );
-    };
+
+state = {
+  session: false
+}
+
+render () {
+  return (
+      <Router>
+        <Switch>
+          <Route exact path="/SignIn" component={SignUp} />
+        </Switch>
+      </Router>
+    );
+  };
 };
 
 export default App;
