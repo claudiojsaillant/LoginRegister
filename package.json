@@ -1,0 +1,23 @@
+{
+  "name": "loginregister",
+  "version": "1.0.0",
+  "description": "Simple register/login app",
+  "main": "server.js",
+  "scripts": {
+    "test": "testapp",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiojsaillant/LoginRegister.git"
+  },
+  "keywords": [
+    "login"
+  ],
+  "author": "Claudio Saillant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claudiojsaillant/LoginRegister/issues"
+  },
+  "homepage": "https://github.com/claudiojsaillant/LoginRegister#readme"
+}
