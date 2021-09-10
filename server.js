@@ -7,8 +7,7 @@ const PORT = process.env.PORT || 5000 // Goes inside .env; hardcoded for testing
 // simple route for testing
 
 app.get('/backend', (req, res) => {
-    res.send("Express server working")
-    
+    res.send("Express server working");
 })
 
 
