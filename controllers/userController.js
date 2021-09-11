@@ -1,6 +1,6 @@
 const db = require("../models");
 
-const createUser = (userInformation) => {
+const createUser = (userInformation, res) => {
     db.Users.findOne({
         $or: [
             {username: userInformation.username},
@@ -10,16 +10,17 @@ const createUser = (userInformation) => {
             if(data != null){
                 if(data.length != 0){
                     res.json({
-                        msg: "This username or email already exists in the database"
+                        message: "This username or email already exists in the database"
                     })
                 } 
             } else {
                 db.Users.create(userInformation).then((userData) => {
                     res.json({
-                        msg: "Sign up successful, username:" + userData.username
-                    });
+                        message: "Sign up successful, username:" + userData.username
+                    })
+            
                 }).catch(function(err){
-                    res.json({msg: "Database error"})
+                    res.json({message: "Database error"})
                     console.log(err);
                 });
             }
