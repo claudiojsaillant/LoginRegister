@@ -6,11 +6,19 @@ const callBackend = (dataReturned) => {
       url: "/backend",
       data: dataReturned
     });
+};
+
+const sendNewUser = (dataReturned) => {
+  return axios({
+    method: "post",
+    url: "/user",
+    data: dataReturned
+  });
 }
 
 const objectToExport = {
-    callBackend
-
+    callBackend,
+    sendNewUser
 }
 
 export default objectToExport;
