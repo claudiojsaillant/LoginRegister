@@ -56,6 +56,18 @@ export function Nav(props) {
             <>
               <li className="nav-item">
                 <Link
+                  to="/Home"
+                  className={
+                    window.location.pathname === "/Home"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  <div className="NavLinks">Home</div>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
                   to="/About"
                   className={
                     window.location.pathname === "/About"
@@ -64,6 +76,18 @@ export function Nav(props) {
                   }
                 >
                   <div className="NavLinks">About</div>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/SignUp"
+                  className={
+                    window.location.pathname === "/SignUp"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  <div className="NavLinks">Sign Up</div>
                 </Link>
               </li>
               <li className="nav-item">

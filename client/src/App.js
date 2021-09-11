@@ -8,7 +8,9 @@ import {
   // Link,
   // Redirect,
 } from "react-router-dom";
+import { Nav } from "./Components/Nav";
 import SignUp from "./Views/SignUp";
+
 
 class App extends Component {
 
@@ -19,8 +21,9 @@ state = {
 render () {
   return (
       <Router>
+        <Nav/>
         <Switch>
-          <Route exact path="/SignIn" component={SignUp} />
+          <Route exact path="/SignUp" component={SignUp} />
         </Switch>
       </Router>
     );
