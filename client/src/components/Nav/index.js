@@ -15,7 +15,7 @@ export function Nav(props) {
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <Link to="/Home" className="navbar-brand">
+      <Link to="/" className="navbar-brand">
         Stibo DX
       </Link>
       <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -23,7 +23,7 @@ export function Nav(props) {
           {props.session ? (
             <>
               <li className="nav-item">
-                <Link to="/Home" className="nav-link active">
+                <Link to="/" className="nav-link active">
                   <div className="NavLinks">Home</div>
                 </Link>
               </li>
@@ -48,7 +48,7 @@ export function Nav(props) {
           ) : (
             <>
               <li className="nav-item">
-                <Link to="/Home" className="nav-link active">
+                <Link to="/" className="nav-link active">
                   <div className="NavLinks">Home</div>
                 </Link>
               </li>

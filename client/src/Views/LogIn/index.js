@@ -65,6 +65,7 @@ class LogIn extends Component {
     return (
       <div>
         <Container style={{"margin": "30px"}}>
+          <h1>Log In</h1>
           <Row>
             <Col size={"sm-4"}>
               <form style={{ marginTop: "30px" }}>
@@ -90,7 +91,7 @@ class LogIn extends Component {
                   }
                   onClick={this.formSubmit}
                 >
-                  LogIn
+                  Log In
                 </Buttom>
               </form>
             </Col>

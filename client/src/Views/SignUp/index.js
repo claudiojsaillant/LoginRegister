@@ -84,6 +84,7 @@ class SignUp extends Component {
     return (
       <div>
         <Container style={{"margin": "30px"}}>
+          <h1>Sign Up</h1>
           <Row>
             <Col size={"sm-4"}>
               <form style={{ marginTop: "30px" }}>
