@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { logOut } from "../../Utilities/sessionManger";
 export function Nav(props) {
+
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <Link to="/Home" className="navbar-brand">
@@ -33,7 +35,7 @@ export function Nav(props) {
                   to="/LogIn"
                   className="nav-link active"
                   onClick={() => {
-                    // logOut();
+                    logOut();
                   }}
                 >
                   <div className="NavLinks">Log Out</div>

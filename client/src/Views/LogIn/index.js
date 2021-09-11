@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Row, Col } from "../../Components/Grid";
 import { Buttom, Input } from "../../Components/Forms";
-// import API from "../../Utilities/apiCalls";
+import Cookies from "js-cookie";
+import API from "../../Utilities/apiCalls";
 
 class LogIn extends Component {
   state = {
@@ -39,14 +40,16 @@ class LogIn extends Component {
     event.preventDefault();
     if(this.emailValidation(this.state.email.trim())){
         if(this.passwordValidation(this.state.password.trim())){
-            // let user = {
-            // email: this.state.email.trim(),
-            // password: this.state.password.trim()
-            // }
-            // API.sendNewUser(user).then((response)=> {
-            //     alert(response.data.message);
-            //     // Change location to homepage
-            // });
+            let user = {
+            email: this.state.email.trim(),
+            password: this.state.password.trim()
+            }
+            API.logUser(user).then((response)=> {
+                if (response.data.token) {
+                  Cookies.set("userToken", response.data.token);
+                }
+                window.location = "/Home"
+            });
         } else {
             alert("Make sure that the rules are beign followed for your password");
         }

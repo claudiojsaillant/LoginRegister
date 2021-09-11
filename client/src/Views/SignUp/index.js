@@ -64,7 +64,7 @@ class SignUp extends Component {
 
           API.sendNewUser(newUser).then((response)=> {
             alert(response.data.message);
-            // Change location to Log In view
+            window.location = "/LogIn"
           });
 
         } else {

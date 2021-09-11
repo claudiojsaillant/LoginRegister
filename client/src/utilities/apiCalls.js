@@ -1,24 +1,24 @@
 import axios from "axios";
 
-const callBackend = (dataReturned) => {
-    return axios({
-      method: "get",
-      url: "/backend",
-      data: dataReturned
-    });
-};
-
-const sendNewUser = (dataReturned) => {
+const sendNewUser = (data) => {
   return axios({
     method: "post",
     url: "/user",
-    data: dataReturned
+    data: data
+  });
+}
+
+const logUser = (data) => {
+  return axios({
+    method: "post",
+    url: "/login",
+    data: data
   });
 }
 
 const objectToExport = {
-    callBackend,
-    sendNewUser
+    sendNewUser,
+    logUser
 }
 
 export default objectToExport;

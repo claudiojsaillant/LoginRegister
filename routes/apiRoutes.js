@@ -6,8 +6,10 @@ module.exports = (app) => {
         userControllers.createUser(req.body, res);
     });
 
-    app.get('/', (req, res) => {
-        res.send("Hit main route");
+    app.post('/login', (req, res) => {
+        userControllers.logUser(req.body, res);
     });
+
+
     
 }
