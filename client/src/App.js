@@ -4,12 +4,14 @@ import React, { Component } from "react";
 import {
   BrowserRouter as Router,
   Switch,
+  Route,
 } from "react-router-dom";
 import { Nav } from "./Components/Nav";
 import SignUp from "./Views/SignUp";
 import LogIn from "./Views/LogIn";
 import Home from "./Views/Home";
 import Homepage from "./Views/Homepage"
+import About from "./Views/About"
 import { getSession } from "./Utilities/sessionManger";
 import { PrivateRoute } from "./Components/PrivateRoute";
 import { PublicRoute } from "./Components/PublicRoute"
@@ -32,6 +34,7 @@ render () {
       <Router>
         <Nav session={this.state.session}/>
         <Switch>
+          <Route exact path="/About" component={About} />
           <PublicRoute exact path="/" component={Homepage} />
           <PublicRoute exact path="/SignUp" component={SignUp} />
           <PublicRoute exact path="/LogIn" component={LogIn} />
