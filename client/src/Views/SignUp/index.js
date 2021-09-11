@@ -37,9 +37,9 @@ class SignUp extends Component {
     return passwordRegex.test(password);
   };
 
-  // <li>Names cant have _,- or . at the beginning</li>
-  // <li>Names cant have __ or . or . or .. or .- or _- inside</li>
-  // <li>Names cant have _,- or . at the end</li>
+  // Names cant have _,- or . at the beginnin
+  // Names cant have __ or . or . or .. or .- or _- inside<
+  // >Names cant have _,- or . at the end<
 
   namesValidation = (firstName, lastName) => {
     const namesRegex = /^(?![.-])(?!.*[.]{2})[a-zA-Z0-9.-]+(?<![.])$/g;

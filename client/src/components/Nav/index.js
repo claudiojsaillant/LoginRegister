@@ -14,11 +14,7 @@ export function Nav(props) {
               <li className="nav-item">
                 <Link
                   to="/Home"
-                  className={
-                    window.location.pathname === "/Home"
-                      ? "nav-link active"
-                      : "nav-link"
-                  }
+                  className="nav-link active"
                 >
                   <div className="NavLinks">Home</div>
                 </Link>
@@ -27,11 +23,7 @@ export function Nav(props) {
               <li className="nav-item">
                 <Link
                   to="/About"
-                  className={
-                    window.location.pathname === "/About"
-                      ? "nav-link active"
-                      : "nav-link"
-                  }
+                  className="nav-link active"
                 >
                   <div className="NavLinks">About</div>
                 </Link>
@@ -39,11 +31,7 @@ export function Nav(props) {
               <li className="nav-item">
                 <Link
                   to="/LogIn"
-                  className={
-                    window.location.pathname === "/LogOut"
-                      ? "nav-link active"
-                      : "nav-link"
-                  }
+                  className="nav-link active"
                   onClick={() => {
                     // logOut();
                   }}
@@ -57,11 +45,7 @@ export function Nav(props) {
               <li className="nav-item">
                 <Link
                   to="/Home"
-                  className={
-                    window.location.pathname === "/Home"
-                      ? "nav-link active"
-                      : "nav-link"
-                  }
+                  className="nav-link active"
                 >
                   <div className="NavLinks">Home</div>
                 </Link>
@@ -69,11 +53,7 @@ export function Nav(props) {
               <li className="nav-item">
                 <Link
                   to="/About"
-                  className={
-                    window.location.pathname === "/About"
-                      ? "nav-link active"
-                      : "nav-link"
-                  }
+                  className="nav-link active"
                 >
                   <div className="NavLinks">About</div>
                 </Link>
@@ -81,11 +61,7 @@ export function Nav(props) {
               <li className="nav-item">
                 <Link
                   to="/SignUp"
-                  className={
-                    window.location.pathname === "/SignUp"
-                      ? "nav-link active"
-                      : "nav-link"
-                  }
+                  className="nav-link active"
                 >
                   <div className="NavLinks">Sign Up</div>
                 </Link>
@@ -93,11 +69,7 @@ export function Nav(props) {
               <li className="nav-item">
                 <Link
                   to="/LogIn"
-                  className={
-                    window.location.pathname === "/LogIn"
-                      ? "nav-link active"
-                      : "nav-link"
-                  }
+                  className="nav-link active"
                 >
                   <div className="NavLinks">Log In</div>
                 </Link>

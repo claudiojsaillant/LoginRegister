@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import { Nav } from "./Components/Nav";
 import SignUp from "./Views/SignUp";
+import LogIn from "./Views/LogIn"
 
 
 class App extends Component {
@@ -24,6 +25,7 @@ render () {
         <Nav/>
         <Switch>
           <Route exact path="/SignUp" component={SignUp} />
+          <Route exact path="/LogIn" component={LogIn} />
         </Switch>
       </Router>
     );
