@@ -37,9 +37,9 @@ class SignUp extends Component {
     return passwordRegex.test(password);
   };
 
-  // Names cant have _,- or . at the beginning</li>
-  // Names cant have __ or . or . or .. or .- or _- inside</li>
-  // Names cant have _,- or . at the end</li>
+  // <li>Names cant have _,- or . at the beginning</li>
+  // <li>Names cant have __ or . or . or .. or .- or _- inside</li>
+  // <li>Names cant have _,- or . at the end</li>
 
   namesValidation = (firstName, lastName) => {
     const namesRegex = /^(?![.-])(?!.*[.]{2})[a-zA-Z0-9.-]+(?<![.])$/g;
@@ -54,11 +54,12 @@ class SignUp extends Component {
     if(this.namesValidation(this.state.firstname.trim(), this.state.lastname.trim())){
       if(this.emailValidation(this.state.email.trim())){
         if(this.passwordValidation(this.state.password.trim())){
+
           let newUser = {
-            firstname: this.state.firstname,
-            lastname: this.state.lastname,
-            email: this.state.email,
-            password: this.state.password
+            firstname: this.state.firstname.trim(),
+            lastname: this.state.lastname.trim(),
+            email: this.state.email.trim(),
+            password: this.state.password.trim()
           }
 
           API.sendNewUser(newUser).then((response)=> {
@@ -83,7 +84,7 @@ class SignUp extends Component {
     return (
       <div>
         <Row>
-          <Col size={"sm-6"}>
+          <Col size={"sm-4"}>
             <form style={{ marginTop: "30px" }}>
               <Input
                 value={this.state.firstname}
@@ -126,7 +127,20 @@ class SignUp extends Component {
               </Buttom>
             </form>
           </Col>
-          <Col size={"sm-6"}></Col>
+          <Col size={"sm-8"}>
+            <h3>Passwords</h3>
+            <ul>
+              <li>Password is at least 8 characters long</li>
+              <li>Contains at least one character</li>
+              <li>Contains at least one number</li>
+            </ul>
+            <h3>Names</h3>
+            <ul>
+              <li>Names cant have _,- or . at the beginning</li>
+              <li>Names cant have __ or . or . or .. or .- or _- inside</li>
+              <li>Names cant have _,- or . at the end</li>
+            </ul>
+          </Col>
         </Row>
       </div>
     );
