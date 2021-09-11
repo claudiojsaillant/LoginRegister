@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col } from "../../Components/Grid";
+import { Row, Col, Container } from "../../Components/Grid";
 import { Buttom, Input } from "../../Components/Forms";
 import Cookies from "js-cookie";
 import API from "../../Utilities/apiCalls";
@@ -47,11 +47,14 @@ class LogIn extends Component {
             API.logUser(user).then((response)=> {
                 if (response.data.token) {
                   Cookies.set("userToken", response.data.token);
+                  window.location = "/Home"
+                } else {
+                  alert(response.data.message)
                 }
-                window.location = "/Home"
+                
             });
         } else {
-            alert("Make sure that the rules are beign followed for your password");
+            alert("Make sure that your password is correct");
         }
     } else {
     alert("Make sure that your email is valid");
@@ -61,36 +64,38 @@ class LogIn extends Component {
   render() {
     return (
       <div>
-        <Row>
-          <Col size={"sm-4"}>
-            <form style={{ marginTop: "30px" }}>
-              <Input
-                value={this.state.email}
-                onChange={this.handleInputChange}
-                name="email"
-                placeholder="Email Address"
-              />
-              <Input
-                value={this.state.password}
-                onChange={this.handleInputChange}
-                name="password"
-                placeholder="Password"
-                type="password"
-              />
-              <Buttom
-                disabled={
-                  !(
-                    this.state.email &&
-                    this.state.password
-                  )
-                }
-                onClick={this.formSubmit}
-              >
-                LogIn
-              </Buttom>
-            </form>
-          </Col>
-        </Row>
+        <Container style={{"margin": "30px"}}>
+          <Row>
+            <Col size={"sm-4"}>
+              <form style={{ marginTop: "30px" }}>
+                <Input
+                  value={this.state.email}
+                  onChange={this.handleInputChange}
+                  name="email"
+                  placeholder="Email Address"
+                />
+                <Input
+                  value={this.state.password}
+                  onChange={this.handleInputChange}
+                  name="password"
+                  placeholder="Password"
+                  type="password"
+                />
+                <Buttom
+                  disabled={
+                    !(
+                      this.state.email &&
+                      this.state.password
+                    )
+                  }
+                  onClick={this.formSubmit}
+                >
+                  LogIn
+                </Buttom>
+              </form>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }

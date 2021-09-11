@@ -1,6 +1,7 @@
 const db = require("../models");
 const jwt = require("jsonwebtoken");
 const config = require("../jwtConfig/default.json");
+
 const createUser = (userInformation, res) => {
     db.Users.findOne({
             email: userInformation.email
@@ -28,7 +29,7 @@ const logUser = (userInformation, res) => {
     db.Users.findOne({ email: userInformation.email }).then(user => {
         if (user) {
             if (user.password === userInformation.password) {
-            // Set payload and expiration in token
+            // Set payload and expiration of the token
             jwt.sign(
                 { user, id: user._id },
                 config.jwtSecret,

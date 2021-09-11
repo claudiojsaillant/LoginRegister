@@ -1,6 +1,6 @@
 // import { get } from "js-cookie";
 import React, { Component } from "react";
-import { Row, Col } from "../../Components/Grid";
+import { Row, Col, Container} from "../../Components/Grid";
 // import { Buttom, Input } from "../../Components/Forms";
 // import API from "../../Utilities/apiCalls";
 import { getSession } from "../../Utilities/sessionManger";
@@ -17,11 +17,13 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Row>
-          <Col size={"sm-4"}>
-            <h1>Welcome, {this.state.name}</h1>
-          </Col>
-        </Row>
+        <Container>
+          <Row>
+            <Col size={"sm-4"}>
+              <h1>Welcome, {this.state.name}</h1>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }

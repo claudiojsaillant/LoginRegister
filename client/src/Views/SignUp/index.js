@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col } from "../../Components/Grid";
+import { Row, Col, Container } from "../../Components/Grid";
 import { Buttom, Input } from "../../Components/Forms";
 import API from "../../Utilities/apiCalls";
 
@@ -83,65 +83,67 @@ class SignUp extends Component {
   render() {
     return (
       <div>
-        <Row>
-          <Col size={"sm-4"}>
-            <form style={{ marginTop: "30px" }}>
-              <Input
-                value={this.state.firstname}
-                onChange={this.handleInputChange}
-                name="firstname"
-                placeholder="First Name"
-              />
-              <Input
-                value={this.state.lastname}
-                onChange={this.handleInputChange}
-                name="lastname"
-                placeholder="Last Name"
-              />
+        <Container style={{"margin": "30px"}}>
+          <Row>
+            <Col size={"sm-4"}>
+              <form style={{ marginTop: "30px" }}>
+                <Input
+                  value={this.state.firstname}
+                  onChange={this.handleInputChange}
+                  name="firstname"
+                  placeholder="First Name"
+                />
+                <Input
+                  value={this.state.lastname}
+                  onChange={this.handleInputChange}
+                  name="lastname"
+                  placeholder="Last Name"
+                />
 
-              <Input
-                value={this.state.email}
-                onChange={this.handleInputChange}
-                name="email"
-                placeholder="Email Address"
-              />
-              <Input
-                value={this.state.password}
-                onChange={this.handleInputChange}
-                name="password"
-                placeholder="Password"
-                type="password"
-              />
-              <Buttom
-                disabled={
-                  !(
-                    this.state.email &&
-                    this.state.password &&
-                    this.state.firstname &&
-                    this.state.lastname
-                  )
-                }
-                onClick={this.formSubmit}
-              >
-                Sign Up
-              </Buttom>
-            </form>
-          </Col>
-          <Col size={"sm-8"}>
-            <h3>Passwords</h3>
-            <ul>
-              <li>Password is at least 8 characters long</li>
-              <li>Contains at least one character</li>
-              <li>Contains at least one number</li>
-            </ul>
-            <h3>Names</h3>
-            <ul>
-              <li>Names cant have _,- or . at the beginning</li>
-              <li>Names cant have __ or . or . or .. or .- or _- inside</li>
-              <li>Names cant have _,- or . at the end</li>
-            </ul>
-          </Col>
-        </Row>
+                <Input
+                  value={this.state.email}
+                  onChange={this.handleInputChange}
+                  name="email"
+                  placeholder="Email Address"
+                />
+                <Input
+                  value={this.state.password}
+                  onChange={this.handleInputChange}
+                  name="password"
+                  placeholder="Password"
+                  type="password"
+                />
+                <Buttom
+                  disabled={
+                    !(
+                      this.state.email &&
+                      this.state.password &&
+                      this.state.firstname &&
+                      this.state.lastname
+                    )
+                  }
+                  onClick={this.formSubmit}
+                >
+                  Sign Up
+                </Buttom>
+              </form>
+            </Col>
+            <Col size={"sm-8"}>
+              <h3>Passwords</h3>
+              <ul>
+                <li>Password is at least 8 characters long</li>
+                <li>Contains at least one character</li>
+                <li>Contains at least one number</li>
+              </ul>
+              <h3>Names</h3>
+              <ul>
+                <li>Names cant have _,- or . at the beginning</li>
+                <li>Names cant have __ or . or . or .. or .- or _- inside</li>
+                <li>Names cant have _,- or . at the end</li>
+              </ul>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
