@@ -9,7 +9,5 @@ module.exports = (app) => {
     app.post('/login', (req, res) => {
         userControllers.logUser(req.body, res);
     });
-
-
     
 }

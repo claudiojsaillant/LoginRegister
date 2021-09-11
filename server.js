@@ -1,11 +1,22 @@
 const express = require('express');
-const path = require("path")
+const path = require("path");
 const mongoose = require("mongoose");
-let app = express();
+const app = express();
+const fs = require('fs');
+require('dotenv').config()
 
-// Goes inside .env; hardcoded for testing purposes.
-const PORT = process.env.PORT || 5000; 
-const MONGODB_URI = "mongodb+srv://claudiodb:123321@gamedesigndb.hicaj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const PORT = process.env.PORT; 
+const MONGODB_URI = process.env.MONGODB_URI;
+
+// Read react's package.json
+const file = './client/package.json';
+let pkg = JSON.parse(fs.readFileSync(file).toString());
+
+// Set react proxy
+pkg.proxy = `${process.env.REACT_PROXY}:${process.env.PORT}`;
+
+//Write file
+fs.writeFileSync(file, JSON.stringify(pkg, null, 2));
 
 // Express middleware
 app.use(express.urlencoded({ extended: true }));
