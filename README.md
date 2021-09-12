@@ -38,6 +38,9 @@
 
 4) Execution
 - Execute npm run start from the /server directory
+
+[Step by step installation video](https://www.youtube.com/watch?v=Zop9o4ML2hc)
+
 ##### OR (Server virtualization in Docker) 
 - Delete the install script in /server/package.json
 - Run docker build -t server .
