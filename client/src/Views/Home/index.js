@@ -16,7 +16,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Container>
+        <Container style={{"margin":"35px"}}>
           <Row>
             <Col size={"sm-4"}>
               <h1>Welcome, {this.state.name}</h1>
