@@ -3,12 +3,13 @@
 #### This is a simple, mobile compatible app.
 
 ## Techonogies
-- Express
-- Mongoose as (Object Data Mapper)
+- MongoDB
+- Express.js
 - React.js
 - Node.js
 
 ## Libraries 
+- Mongoose as (Object Data Mapper)
 - Cookies.js 
 - Boostrap for front-end elements
 - React router
