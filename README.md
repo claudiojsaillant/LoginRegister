@@ -1,2 +1,0 @@
-# LoginRegister
-Technical Assignment
