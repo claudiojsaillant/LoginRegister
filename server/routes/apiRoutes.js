@@ -4,7 +4,7 @@ module.exports = (app) => {
 
     // API routes using userControllers
 
-    app.post("/user", (req, res => {
+    app.post("/user", (req, res) => {
         userControllers.createUser(req.body, res);
     });
 
