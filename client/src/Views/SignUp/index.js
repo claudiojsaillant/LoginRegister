@@ -11,6 +11,7 @@ class SignUp extends Component {
     password: "",
   };
 
+  // Instantly puts the user input in state
 
   handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -48,6 +49,8 @@ class SignUp extends Component {
     
     return firstValidation.test(firstName) && lastValidation.test(lastName);
   };
+
+  // Makes sure all the inputs are correct before sending them to the API
 
   formSubmit = (event) => {
     event.preventDefault();

@@ -1,8 +1,10 @@
 const db = require("../models");
 const jwt = require("jsonwebtoken");
+// JWT Password
 const config = require("../jwtConfig/default.json");
 
 const createUser = (userInformation, res) => {
+    // Check for duplicate email
     db.Users.findOne({
             email: userInformation.email
     }).then(function(data){
@@ -13,6 +15,7 @@ const createUser = (userInformation, res) => {
                     });
                 }; 
             } else {
+                // Create user
                 db.Users.create(userInformation).then((userData) => {
                     res.json({
                         message: "Welcome " + userData.firstname + ", your sign up was successful"
@@ -26,8 +29,10 @@ const createUser = (userInformation, res) => {
     };
 
 const logUser = (userInformation, res) => {
+    // Find user trying to log
     db.Users.findOne({ email: userInformation.email }).then(user => {
         if (user) {
+            // Make sure password is correct
             if (user.password === userInformation.password) {
             // Set payload and expiration of the token
             jwt.sign(

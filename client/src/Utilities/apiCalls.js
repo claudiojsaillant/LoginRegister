@@ -1,5 +1,7 @@
 import axios from "axios";
 
+// API calling access utility 
+
 const sendNewUser = (data) => {
   return axios({
     method: "post",

@@ -1,7 +1,8 @@
 const userControllers = require("../controllers/userController");
-const path = require("path");
 
 module.exports = (app) => {
+
+    // API routes using userControllers
 
     app.post("/user", function(req, res) {
         userControllers.createUser(req.body, res);

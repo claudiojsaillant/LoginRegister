@@ -10,6 +10,7 @@ class LogIn extends Component {
     password: "",
   };
 
+  // Instantly puts the user input in state
   handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState({
@@ -35,6 +36,7 @@ class LogIn extends Component {
     return passwordRegex.test(password);
   };
 
+  // Makes sure all the inputs are correct before sending them to the API
 
   formSubmit = (event) => {
     event.preventDefault();
@@ -46,12 +48,12 @@ class LogIn extends Component {
             }
             API.logUser(user).then((response)=> {
                 if (response.data.token) {
+                  // Log in succesful putting JWT token in a cookie so It can be retreived later for information
                   Cookies.set("userToken", response.data.token);
                   window.location = "/Home"
                 } else {
                   alert(response.data.message)
                 }
-                
             });
         } else {
             alert("Make sure that your password is correct");
