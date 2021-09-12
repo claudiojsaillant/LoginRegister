@@ -16,19 +16,19 @@ class About extends Component {
               
                 <h3>Frameworks used</h3>
                 <ul>
+                    <li>MongoDB</li>
                     <li>Express</li>
-                    <li>Mongoose as (Object Data Mapper)</li>
                     <li>React.js</li>
                     <li>Node.js</li>
                 </ul>
                 <h3>Some of the libraries used</h3>
                 <ul>
+                    <li>Mongoose as (Object Data Mapper)</li>
                     <li>Json Web Tokens and Cookies for authentification</li>
                     <li>Boostrap for front-end elements</li>
                     <li>React router</li>
                     <li>Jwt-decode for decoding in react</li>
                 </ul>
-                <h2>Database used: Mongo DB</h2>
             </div>
          
           </Row>

@@ -2,7 +2,7 @@
 
 #### This is a simple, mobile compatible app.
 
-## Techonogies
+## Technologies
 - MongoDB
 - Express.js
 - React.js
@@ -28,7 +28,7 @@
 - Node.js
 - Docker (Optional)
 
-## Instalation
+## Installation
 1) Clone the repo
 2) Inside the /server directory run: npm install (this will install all the packages needed for both the server and the react client)
 3) Set up .env file inside the /server directory
@@ -44,3 +44,8 @@
 - Run docker run -v $(pwd):/app --env-file ./.env -p {PORT_USED_IN_ENV}:{PORT_USED_IN_ENV} -d --name server node-app (This command only works for mac because of $(pwd))
 - Change directory into /client
 - Run npm start
+
+## API Diagram
+
+
+![API](https://i.ibb.co/tQf9Dsm/Untitled-Diagram-drawio.png)
